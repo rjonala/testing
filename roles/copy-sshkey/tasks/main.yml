@@ -1,0 +1,16 @@
+---
+
+- name: make directory
+  file:
+    path: "/home/jenkins/.ssh"
+    state: directory
+
+- name: create empty file
+  file:
+    path: "/home/jenkins/.ssh/authorized_keys"
+    state: touch
+
+- name: copy public key
+  lineinfile:
+    path: "/home/jenkins/.ssh/authorized_keys"
+    line: "{{ pubkey }}"
