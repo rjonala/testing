@@ -1,0 +1,7 @@
+---
+
+- name: create a directory
+  file:
+    path: "/tmp/test1/"
+    state: directory
+    mode: 0755
